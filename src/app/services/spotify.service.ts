@@ -22,7 +22,7 @@ export class SpotifyService {
 
     const token = localStorage.getItem('toke');
 
-    if(!!token)
+    if(!token)
      return false;
 
     try{

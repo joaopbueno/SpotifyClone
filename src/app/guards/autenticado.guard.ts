@@ -14,6 +14,7 @@ export class AutenticadoGuard implements CanLoad {
     route: Route,
     segments: UrlSegment[]): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       const token = localStorage.getItem('token');
+      //adicionar timeout
 
       if(!token){
         this.naoAutenticado();
@@ -27,7 +28,6 @@ export class AutenticadoGuard implements CanLoad {
           resp(this.naoAutenticado());
       })
 
-      return true;
   }
 
   naoAutenticado(){
