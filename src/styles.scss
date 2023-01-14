@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Clicker+Script&family=Montserrat:wght@500;600;700&family=Poppins:wght@200;300;400;500;600&display=swap');
+@import 'variaveis.scss';
+
+
+html , body{
+  margin: 0;
+  padding: 0;
+  background-color: $cor-fundo;
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
