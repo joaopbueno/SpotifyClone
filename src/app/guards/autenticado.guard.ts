@@ -7,6 +7,7 @@ import { SpotifyService } from '../services/spotify.service';
   providedIn: 'root'
 })
 export class AutenticadoGuard implements CanLoad {
+  usuarioCriado: boolean = false;
 
   constructor(private router: Router, private spotifyService: SpotifyService){}
 
@@ -21,8 +22,8 @@ export class AutenticadoGuard implements CanLoad {
       }
 
       return new Promise(resp =>{
-        const usuarioCriado = this.spotifyService.iniciarlizarUsuario();
-        if(usuarioCriado)
+       this.usuarioCriado = !!this.spotifyService.iniciarlizarUsuario();
+        if(this.usuarioCriado)
           resp(true);
         else
           resp(this.naoAutenticado());
