@@ -1,8 +1,23 @@
 @import 'table.scss';
+@import 'variaveis.scss';
 
 :host {
   display: flex;
   justify-content: space-between;
+
+  ::-webkit-scrollbar{
+    width: 7px;
+
+
+    &-thumb {
+      background-color: rgba($cor-primaria, 0.20);
+      border-radius: 10px;
+    }
+
+    &-track {
+      background-color: transparent;
+    }
+  }
 
   .minhas-musicas {
     padding: 0px 50px;
@@ -11,9 +26,6 @@
     max-height: 100vh;
     overflow-y: scroll;
 
-    &::-webkit-scrollbar{
-      display: none;
-    }
   }
 
   .d-block {
